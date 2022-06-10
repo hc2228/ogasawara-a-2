@@ -7,7 +7,13 @@
   <body>
   <p>
 
-  <form method="post" action="submit.php">
+  <?php
+
+			require_once 'submit.php';
+
+			try
+			{
+
     氏名：<input type="text" name="氏名" /><br>
     性別：
     <input type="radio" name="性別" value="男" checked="checked" />男　
@@ -49,6 +55,10 @@
     <input type="submit" value="送信" />　
     <input type="reset" value="取り消し" />
   </form>
+
+}
+
+?>
 
   </p>
   </body>
