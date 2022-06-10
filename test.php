@@ -7,7 +7,7 @@
   <body>
   <p>
 
-  <form method="post" action="submit-0510.php">
+  <form method="post" action="submit.php">
     氏名：<input type="text" name="氏名" /><br>
     性別：
     <input type="radio" name="性別" value="男" checked="checked" />男　
