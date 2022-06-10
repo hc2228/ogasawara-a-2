@@ -6,11 +6,9 @@
   </head>
 
   <body>
-
   <!-- 自由記述 -->
   ■自由記述：<br>
   <?php print($_POST["freeans"]); ?>
-
   </body>
 
 </html>
