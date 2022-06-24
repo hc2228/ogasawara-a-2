@@ -81,6 +81,9 @@ a{
 .purchase{
     margin-top: 30px;
     margin-bottom: 30px;
+    display: flex;/*横並び*/
+    white-space: nowrap;
+    justify-content: center;
 }
 .purchase a{
     width: 400px;
