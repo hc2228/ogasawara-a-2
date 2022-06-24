@@ -46,7 +46,7 @@
     パラｰメータ：name="freeans" rows="4" cols="40" 
     -->
     <br><br>
-    <input type="submit" value="送信" />　
+    <input type="submit" value="送信" />
     <input type="reset" value="取り消し" />
   </form>
 
