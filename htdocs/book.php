@@ -8,7 +8,7 @@
 <body>
   <div class="main">
       購入希望書籍申請
-      <form method="post" action="?">
+      <form method="post" action="book1.php">
         <font size="3">日付</font>
         <input type="date" name="birthday" required><br>
 
