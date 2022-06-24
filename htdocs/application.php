@@ -29,11 +29,11 @@ $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($result as $row) {
-    $id = h($row['id']);
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo "<tr><td>{$id}</td><td>{$name}</td><td>{$stock}</td></tr>";
-}
+    echo " 
+           <tr><td>{$id}</td><td>{$name}</td><td>{$stock}</td></tr>";
+          }
 ?>
 </table>
 
