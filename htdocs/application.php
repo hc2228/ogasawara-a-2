@@ -57,6 +57,10 @@ foreach ($result as $row) {
           <option value="山内珠々菜">山内珠々菜</option>
           <option value="山本翔太">山本翔太</option>
         </select><br>
+
+        日付
+        <input type="date" name="birthday" required><br>
+
         
 <div class="purchase">
 <a href="hello.php" class="btn">申請</a>
