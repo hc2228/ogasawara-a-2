@@ -7,6 +7,8 @@
   </head>
   <body>
 
+  <form action="post.php" method="post">
+
   <table border="1">
     <from action="" method="">
   <tr>
@@ -33,7 +35,7 @@ foreach ($result as $row) {
     $id = h($row['id']); 
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo " form action='post.php' method='post'<tr>
+    echo "<tr>
     <td>{$name}</td>
     <td>{$id}</td>
     <td>{$stock}</td>
@@ -80,6 +82,7 @@ foreach ($result as $row) {
 <div class="purchase">
 <input type="submit" value="申請"/>
 <a href="index.php" class="btn">戻る</a>
+    </form>
 </div>
             
     </body>
