@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="main">
+<div class="header zentai">
       購入希望書籍申請
       <form method="post" action="book1.php">
         日付
