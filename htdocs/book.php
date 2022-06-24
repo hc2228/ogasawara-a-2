@@ -71,10 +71,9 @@ echo "<input type=\"hidden\" name=\"num\" value={$num} />";
 <input type="date"  name="birthday">
 </p>
 <p>
-<input type="submit" value="申請" />
-<input type="button" value="戻る" />
+<a href="hello.php" class="btn">申請</a>
+<a href="index.php" class="btn">戻る</a>
 </p>
-<a href="./index.php"></a>
 </form>
 
   </body>
