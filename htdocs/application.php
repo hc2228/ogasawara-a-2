@@ -33,14 +33,14 @@ foreach ($result as $row) {
     $id = h($row['id']); 
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo " form action='post.php' method='post'<tr>
+    echo " <form action='post.php' method='post'><tr>
     <td>{$name}</td>
     <td>{$id}</td>
     <td>{$stock}</td>
     <td></td>
     <td><input type='checkbox'></td>
     <td><input type='checkbox'></td>
-    </tr>";
+    </tr></form>";
      }
 ?>
 </table>
