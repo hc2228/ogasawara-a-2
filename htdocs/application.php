@@ -30,9 +30,10 @@ foreach ($result as $row) {
 ?>
 </table>
         
-
+<div class="purchase">
 <a href="hello.php" class="btn">申請</a>
 <a href="index.php" class="btn">戻る</a>
+</div>
             
     </body>
 </html>
