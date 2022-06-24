@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>購入希望書籍申請</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main">
       購入希望書籍申請
-      <form method="post" action="?">
-        <font size="3">日付</font>
+      <form method="post" action="book1.php">
+        日付
         <input type="date" name="birthday" required><br>
 
-        <font size="3">氏名</font>
+        氏名
         <select name="name" required>
           <option value="">未選択</option>
           <option value="相賀陽菜">相賀陽菜</option>
@@ -40,13 +40,13 @@
           <option value="山本翔太">山本翔太</option>
         </select><br>
 
-        <font size="3">タイトル</font>
+        タイトル
         <input type="textbox" name="title" required><br>
 
-        <font size="3">出版社</font>
+        出版社
         <input type="textbox" name="publisher" required><br>
 
-        金額</font>
+        金額
         <input type="number" name="price" required>円<br>
 
         URL

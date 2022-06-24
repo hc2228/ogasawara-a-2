@@ -21,7 +21,7 @@
         </div>
     </form>
     <div class="purchase">
-        <a href="hello.php" class="btn">購入希望書籍申請画面へ</a>
+        <a href="book.php" class="btn">購入希望書籍申請画面へ</a>
     </div>
 
         <div class="copy">
