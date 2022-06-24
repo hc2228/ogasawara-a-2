@@ -33,7 +33,7 @@ foreach ($result as $row) {
     $id = h($row['id']); 
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo " <tr><td>{$name}</td><td>{$id}</td><td>{$stock}</td><td><input type='checkbox'></tr>";
+    echo " <tr><td>{$name}</td><td>{$id}</td><td>{$stock}</td><td></td><td><input type='checkbox'></td><td><input type='checkbox'></td></tr>";
           }
 ?>
 </table>
