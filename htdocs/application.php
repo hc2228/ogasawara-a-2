@@ -8,7 +8,14 @@
   <body>
 
   <table border="1">
-        <tr><th>ID</th><th>タイトル</th><th>在庫</th></tr>
+  <tr>
+   <th>本のタイトル</th>
+   <th>借りている人</th>
+   <th>在庫</th>
+   <th>返却予定日</th>
+   <th>貸出チェック</th>
+   <th>返却チェック</th>
+ </tr>
 
 <?php
 # 送信されたデータの取得
