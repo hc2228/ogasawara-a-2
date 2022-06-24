@@ -9,7 +9,6 @@
 
   <table border="1">
   <tr>
-   <th>ID</th>
    <th>本のタイトル</th>
    <th>借りている人</th>
    <th>在庫</th>
