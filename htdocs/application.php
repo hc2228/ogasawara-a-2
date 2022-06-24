@@ -8,6 +8,7 @@
   <body>
 
   <table border="1">
+    <from action="" method="">
   <tr>
    <th>本のタイトル</th>
    <th>借りている人</th>
