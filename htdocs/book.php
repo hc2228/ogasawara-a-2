@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>購入希望書籍申請</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main">
