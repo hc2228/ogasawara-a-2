@@ -38,8 +38,10 @@ a{
     overflow: hidden;
 }
 .kensaku input[type='text'] {
+    width: 350px;
     border: none;
     height: 2.0em;
+    color: #7A903D;
 }
 .ef input[type='text']:focus {
     outline: 0;
