@@ -71,7 +71,7 @@ foreach ($result as $row) {
 
         
 <div class="purchase">
-<a href="hello.php" class="btn">申請</a>
+<input type="submit.php" value="申請">
 <a href="index.php" class="btn">戻る</a>
 </div>
             
