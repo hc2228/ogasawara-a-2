@@ -38,6 +38,8 @@ a{
     overflow: hidden;
 }
 .kensaku input[type='text'] {
+    width: 350px;
+    color: #7A903D;
     border: none;
     height: 2.0em;
 }
