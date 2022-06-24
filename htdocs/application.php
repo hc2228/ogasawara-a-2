@@ -32,10 +32,9 @@ foreach ($result as $row) {
     $id = h($row['id']);
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo " <tr><td><input type=\"checkbox\" name=\"chk[]\" value={$id} />
+    echo " 
            <tr><td>{$id}</td><td>{$name}</td><td>{$stock}</td></tr>";
-    $num++;
-}
+          }
 ?>
 </table>
 
