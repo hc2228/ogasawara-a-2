@@ -29,7 +29,6 @@ $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($result as $row) {
-    $id = h($row['id']);
     $name = h($row['book_name']);
     $stock = h($row['stock']);
     echo " 
