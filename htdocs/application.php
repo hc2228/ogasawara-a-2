@@ -6,9 +6,11 @@
     <title>書籍申請画面</title>
   </head>
   <body>
+  <pre><?php var_dump($_POST); ?></pre>
+
+  <form action="post.php" method="post">
 
   <table border="1">
-    <from action="" method="">
   <tr>
    <th>本のタイトル</th>
    <th>借りている人</th>
@@ -80,6 +82,7 @@ foreach ($result as $row) {
 <div class="purchase">
 <input type="submit" value="申請"/>
 <a href="index.php" class="btn">戻る</a>
+    </form>
 </div>
             
     </body>
