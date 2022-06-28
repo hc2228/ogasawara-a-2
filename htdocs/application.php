@@ -26,7 +26,7 @@ $name = $_POST['book_name'];
 require 'db.php'; # 接続
 
 //検索実行
-$sql = 'SELECT * FROM book_info WHERE book_name LIKE "%'.$name.'%"';
+$sql = 'SELECT * FROM books WHERE book_name LIKE "%'.$name.'%"';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
