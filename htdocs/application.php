@@ -5,16 +5,13 @@
     <link rel='stylesheet' href='style.css' />
     <title>書籍申請画面</title>
   </head>
-  <body>
-  <pre><?php var_dump($_POST); ?></pre>
+  <body> 
 
-  <form action="post.php" method="post">
-
+<form action="post.php" method="post">
   <table border="1">
   <tr>
    <th>本のタイトル</th>
    <th>借りている人</th>
-   <th>在庫</th>
    <th>返却予定日</th>
    <th>貸出チェック</th>
    <th>返却チェック</th>
@@ -26,29 +23,31 @@ $name = $_POST['book_name'];
 require 'db.php'; # 接続
 
 //検索実行
-$sql = 'SELECT * FROM books WHERE book_name LIKE "%'.$name.'%"';
+$sql = 'SELECT * FROM books WHERE title LIKE "%'.$name.'%"';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+$num = 0;
 
 foreach ($result as $row) {
-    $id = h($row['id']); 
-    $name = h($row['book_name']);
-    $stock = h($row['stock']);
-    echo " <form action='post.php' method='post'><tr>
-    <td>{$name}</td>
-    <td>{$id}</td>
-    <td>{$stock}</td>
-    <td></td>
-    <td><input type='checkbox'></td>
-    <td><input type='checkbox'></td>
-    </tr></form>";
-     }
+    $bookid = h($row['id']); 
+    $title = h($row['title']);
+    $users = h($row['users_name']);
+    $return = h($row['return_day']);
+    echo "<tr><td>{$title}</td>
+    <td>{$users}</td>
+    <td>{$return}</td>
+    <td><input type=\"checkbox\" name=\"chk[]\" value={$bookid}></td>
+    <td><input type=\"checkbox\" name=\"ret[]\" value={$bookid}></td>
+    </tr>";
+    $num++;
+}
+echo "<input type=\"hidden\" name=\"num\" value={$num}>"
 ?>
 </table>
 
 氏名
-        <select name="name" required>
+        <select name="name">
           <option value="">未選択</option>
           <option value="相賀陽菜">相賀陽菜</option>
           <option value="金田龍弥">金田龍弥</option>
@@ -76,13 +75,14 @@ foreach ($result as $row) {
         </select><br>
 
         日付
-        <input type="date" name="birthday" required><br>
+        <input type="date" name="return"><br>
 
         
 <div class="purchase">
 <input type="submit" value="申請"/>
 <a href="index.php" class="btn">戻る</a>
-    </form>
+
+</from>
 </div>
             
     </body>
