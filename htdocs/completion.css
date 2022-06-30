@@ -49,6 +49,12 @@ label {
 	text-align: left;
 }
 
+.purchase{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 .purchase a{
     width: 20%;
     height: 10%;
