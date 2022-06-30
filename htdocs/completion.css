@@ -37,16 +37,31 @@ body{
 	border-bottom: 1px solid #ccc;
 	text-align: left;
 }
-
 label {
 	display: inline-block;
 	margin-bottom: 10px;
 	font-weight: bold;
 	width: 150px;
 }
-
 .element_wrap p {
 	display: inline-block;
 	margin:  0;
 	text-align: left;
+}
+
+.purchase a{
+    width: 400px;
+    margin:0 auto;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #7A903D;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+.purchase :hover{
+    opacity: 0.7;
+    transition-duration: 0.1s;
 }
