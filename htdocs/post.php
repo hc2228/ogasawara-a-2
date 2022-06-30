@@ -12,7 +12,7 @@
   $user = $_POST['name'];      #名前
   $p = $_POST['return'];       #返却予定日     
   $bookid = $_POST['chk'];     #貸出チェックをした図書 
-  $reverse =  $_POST['ret'] ;
+  $reverse =  $_POST['ret'];
   $today = date('Y-m-d');
   $num = $_POST['num'];        # 検索されたデータ数
 
