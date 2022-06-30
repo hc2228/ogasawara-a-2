@@ -40,6 +40,5 @@
   }
    header('Location: ./index.php');
   ?>
-
-  </body>
+ </body>
 </html>
