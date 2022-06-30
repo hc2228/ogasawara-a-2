@@ -8,7 +8,7 @@
     </head>
     
 <body>
-    <form method="post" action="book1.php">
+    <form method="post" action="completion.php">
         <div class="header zentai">
             <p>購入希望書籍申請</p>
         </div>
