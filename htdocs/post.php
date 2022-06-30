@@ -6,22 +6,32 @@
     <title>データ追加</title>
   </head>
   <body>
+  <pre><?php var_dump($_POST); ?></pre>
 
   <?php
   # 送信されたデータの取得
-  $name = $_POST['id'];  
-  $p = $_POST['name'];           
-  $s = $_POST['birthday'];           
+  $user = $_POST['name'];      #名前
+  $p = $_POST['return'];       #返却予定日     
+  $bookid = $_POST['chk'];     #貸出チェックをした図書   
+  $today = date('Y-m-d');
+  $num = $_POST['num'];        # 検索されたデータ数
 
   require 'db.php'; # 接続
-  $sql = 'INSERT into productinfo (book_id, user_name, schedule) values (:name, :p, :s)';
-  $prepare = $db->prepare($sql); # 準備
 
-  $prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1
-  $prepare->bindValue(':p', $p, PDO::PARAM_STR);         # 埋め込み2
-  $prepare->bindValue(':s', $s, PDO::PARAM_STR);         # 埋め込み3
+  for ($i=0; $i<$num; $i++){
+    if (!empty($bookid[$i])) {
+      $id = $bookid[$i];
+      #$sql = 'INSERT into books (lending_day, users_name, return_day ) values (:today, :name, :p)';
+      $sql = "UPDATE books SET lending_day = \"$today\", users_name = \"$user\", return_day = \"$p\" where id = \"$id\"";
+      #$sql = 'UPDATE books SET lending_day = :today, users_name = :user, return_day = :p where id = :id';
+      $prepare = $db->prepare($sql); # 準備
+      #$prepare->bindValue(':today', $today, PDO::PARAM_STR);         # 埋め込み3
+      #$prepare->bindValue(':user', $user, PDO::PARAM_STR);           # 埋め込み1
+      #$prepare->bindValue(':p', $p, PDO::PARAM_STR);                 # 埋め込み2
 
-  $prepare->execute(); # 実行（本当はエラーチェックが必要）
+      $prepare->execute(); # 実行（本当はエラーチェックが必要）
+    }
+  }
   header('Location: ./index.php');
   ?>
 
