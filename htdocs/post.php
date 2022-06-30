@@ -14,7 +14,7 @@
   $s = $_POST['birthday'];           
 
   require 'db.php'; # 接続
-  $sql = 'insert into productinfo (book_id, user_name, schedule) values (:name, :p, :s)';
+  $sql = 'INSERT into productinfo (book_id, user_name, schedule) values (:name, :p, :s)';
   $prepare = $db->prepare($sql); # 準備
 
   $prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1

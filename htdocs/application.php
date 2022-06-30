@@ -6,9 +6,11 @@
     <title>書籍申請画面</title>
   </head>
   <body>
+  <pre><?php var_dump($_POST); ?></pre>
+
+  <form action="post.php" method="post">
 
   <table border="1">
-    <from action="" method="">
   <tr>
    <th>本のタイトル</th>
    <th>借りている人</th>
@@ -24,7 +26,7 @@ $name = $_POST['book_name'];
 require 'db.php'; # 接続
 
 //検索実行
-$sql = 'SELECT * FROM book_info WHERE book_name LIKE "%'.$name.'%"';
+$sql = 'SELECT * FROM books WHERE book_name LIKE "%'.$name.'%"';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
@@ -33,8 +35,15 @@ foreach ($result as $row) {
     $id = h($row['id']); 
     $name = h($row['book_name']);
     $stock = h($row['stock']);
-    echo " <tr><td>{$name}</td><td>{$name}</td><td>{$stock}</td></tr>";
-          }
+    echo " <form action='post.php' method='post'><tr>
+    <td>{$name}</td>
+    <td>{$id}</td>
+    <td>{$stock}</td>
+    <td></td>
+    <td><input type='checkbox'></td>
+    <td><input type='checkbox'></td>
+    </tr></form>";
+     }
 ?>
 </table>
 
@@ -73,6 +82,7 @@ foreach ($result as $row) {
 <div class="purchase">
 <input type="submit" value="申請"/>
 <a href="index.php" class="btn">戻る</a>
+    </form>
 </div>
             
     </body>
