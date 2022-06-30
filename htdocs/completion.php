@@ -38,6 +38,10 @@
 		<label>URL</label>
 		<p><?php echo $_POST['URL']; ?></p>
 	</div>
+
+	<div class="purchase">
+		<a href="index.php" class="btn">戻る</a>
+	</div>
 </form>
 
 </body>
