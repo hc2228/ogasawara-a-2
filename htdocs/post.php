@@ -6,13 +6,13 @@
     <title>データ追加</title>
   </head>
   <body>
-  <pre><?php var_dump($_POST); ?></pre>
 
   <?php
   # 送信されたデータの取得
   $user = $_POST['name'];      #名前
   $p = $_POST['return'];       #返却予定日     
-  $bookid = $_POST['chk'];     #貸出チェックをした図書   
+  $bookid = $_POST['chk'];     #貸出チェックをした図書 
+  $reverse =  $_POST['ret'] ;
   $today = date('Y-m-d');
   $num = $_POST['num'];        # 検索されたデータ数
 
@@ -31,8 +31,14 @@
 
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
     }
+    if (!empty($reverse[$i])) {
+      $id = $reverse[$i];
+      $sql = "UPDATE books SET lending_day = \"\", users_name = \"\", return_day = \"\" where id = \"$id\"";
+      $prepare = $db->prepare($sql); # 準備
+      $prepare->execute(); # 実行（本当はエラーチェックが必要）
+   }
   }
-  header('Location: ./index.php');
+   header('Location: ./index.php');
   ?>
 
   </body>
