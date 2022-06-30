@@ -50,17 +50,19 @@ label {
 }
 
 .purchase a{
-    width: 200px;
+    width: 20%;
+    height: 20%;
     margin:0 auto;
     text-align: center;
-    font-size: 30px;
+    padding: 10px;
+    font-size: 150%;
     color: #fff;
     background: #7A903D;
     display: block;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 5px;
-    text-decoration:none; 
+    border:none;
 }
 .purchase :hover{
     opacity: 0.7;
