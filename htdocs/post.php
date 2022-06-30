@@ -33,7 +33,7 @@
     }
     if (!empty($reverse[$i])) {
       $id = $reverse[$i];
-      $sql = "UPDATE books SET lending_day = \"_\", users_name = \"_\", return_day = \"_\" where id = \"$id\"";
+      $sql = "UPDATE books SET lending_day = \"\", users_name = \"\", return_day = \"\" where id = \"$id\"";
       $prepare = $db->prepare($sql); # 準備
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
    }
