@@ -6,7 +6,6 @@
     <title>書籍申請画面</title>
   </head>
   <body> 
-    <pre><?php var_dump($_POST); ?></pre>
 
 <form action="post.php" method="post">
   <table border="1">
@@ -39,7 +38,7 @@ foreach ($result as $row) {
     <td>{$users}</td>
     <td>{$return}</td>
     <td><input type=\"checkbox\" name=\"chk[]\" value={$bookid}></td>
-    <td><input type=\"checkbox\"></td>
+    <td><input type=\"checkbox\" name=\"ret[]\" value={$bookid}></td>
     </tr>";
     $num++;
 }
@@ -48,7 +47,7 @@ echo "<input type=\"hidden\" name=\"num\" value={$num}>"
 </table>
 
 氏名
-        <select name="name" required>
+        <select name="name">
           <option value="">未選択</option>
           <option value="相賀陽菜">相賀陽菜</option>
           <option value="金田龍弥">金田龍弥</option>
@@ -76,7 +75,7 @@ echo "<input type=\"hidden\" name=\"num\" value={$num}>"
         </select><br>
 
         日付
-        <input type="date" name="return" required><br>
+        <input type="date" name="return"><br>
 
         
 <div class="purchase">
