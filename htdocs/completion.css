@@ -50,7 +50,7 @@ label {
 }
 
 .purchase a{
-    width: 400px;
+    width: 200px;
     margin:0 auto;
     text-align: center;
     font-size: 30px;
@@ -60,6 +60,7 @@ label {
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 5px;
+    text-decoration:none; 
 }
 .purchase :hover{
     opacity: 0.7;
