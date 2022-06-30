@@ -66,7 +66,7 @@
 
         <p>
             <label for="url">URL</label>
-            <input type="url" name="url" required />
+            <input type="url" name="URL" required />
         </p>
 </div>
         
