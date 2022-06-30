@@ -63,6 +63,7 @@ label {
     padding-bottom: 15px;
     border-radius: 5px;
     border:none;
+    text-decoration:none; 
 }
 .purchase :hover{
     opacity: 0.7;
