@@ -32,7 +32,7 @@
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
     }
   }
-  header('Location: ./index.php');
+  header('Location: ./application.php');
   ?>
 
   </body>
