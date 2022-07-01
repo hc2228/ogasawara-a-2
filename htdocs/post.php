@@ -18,7 +18,7 @@
   if (!empty($_POST['ret'])){
       $reverse =  $_POST['ret'];}  #返却チェックをした図書
   
-  $today = date('Y-m-d');      #貸出日
+  $today = date('YYYY-MM-DD HH:MM:SS');      #貸出日
   $num = $_POST['num'];        # 検索されたデータ数
 
   for ($i=0; $i<$num; $i++){
