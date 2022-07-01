@@ -45,11 +45,7 @@
   }
    header('Location: ./index.php');
   ?>
-<<<<<<< HEAD
 
-
-=======
   
->>>>>>> 4556a2f47ac2b013a282709be6c14e45ec6e353e
   </body>
 </html>
