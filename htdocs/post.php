@@ -18,7 +18,7 @@
   if (!empty($_POST['ret'])){
       $reverse =  $_POST['ret'];}  #返却チェックをした図書
   
-  $today = date('YYYY-MM-DD HH:MM:SS');      #貸出日
+  $today = date('YYYY-MM-DD');      #貸出日
   $num = $_POST['num'];        # 検索されたデータ数
 
   for ($i=0; $i<$num; $i++){
@@ -51,7 +51,7 @@
     
     if (!empty($reverse[$i])) {
       $id = $reverse[$i];
-      $sql = "UPDATE books SET lending_day = null, users_name = \"\", return_day = \"\" where id = \"$id\"";
+      $sql = "UPDATE books SET lending_day = \"$today\", users_name = \"\", return_day = \"\" where id = \"$id\"";
       $prepare = $db->prepare($sql); # 準備
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
    }
