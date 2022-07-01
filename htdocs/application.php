@@ -82,8 +82,8 @@ echo "<input type=\"hidden\" name=\"num\" value={$num}>"
 <input type="submit" value="申請"/>
 <a href="index.php" class="btn">戻る</a>
 
-</from>
 </div>
+</form>
             
     </body>
 </html>

@@ -32,7 +32,7 @@
 	</div>
     <div class="element_wrap">
 		<label>金額</label>
-		<p><?php echo $_POST['price']; ?></p>
+		<p><?php echo $_POST['price']; ?></p>円
 	</div>
     <div class="element_wrap">
 		<label>URL</label>
