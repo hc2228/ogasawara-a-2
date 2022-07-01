@@ -60,8 +60,8 @@ label{
     justify-content: center;
 }
 .purchase input{
-    width: 30%;
-    height: 30%;
+    width: 30px;
+    height: 30px;
     margin:0 auto;
     text-align: center;
     padding: 10px;
