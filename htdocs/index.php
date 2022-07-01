@@ -10,9 +10,10 @@
 
     <body>
     <form action="application.php" method="post" class="search">
-        <div class="header zentai">
+        <div class="header">
                 <p>研究室書籍管理システム</p>
         </div>
+
 		<div class="kensaku">
             <label class="ef">
             <input type="text" name="book_name" size="25" placeholder="search books!">
@@ -20,6 +21,7 @@
             </label>
         </div>
     </form>
+    
     <div class="purchase">
         <a href="kounyu.php" class="btn">購入希望書籍申請画面へ</a>
     </div>
