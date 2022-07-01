@@ -19,7 +19,7 @@
     $reverse =  $_POST['ret'] ;}  #返却チェックをした図書
 
     $today = date('Y-m-d');      #貸出日
-    $day = '0000-00-00';
+    $day = date('0000-00-00');
     $num = $_POST['num'];        # 検索されたデータ数
 
   require 'db.php'; # 接続
