@@ -28,14 +28,14 @@ body{
 }
 .header h1{
     color: #7A903D;
-    font-size: 10px;
+    font-size: 100px;
     padding: 10px 0;
     margin-top: 40px;
     margin-bottom: 20px;
     font-weight:bold;
 }
 .header p{
-    font-size: 150%;
+    font-size: 75px;
     color: #333;
     padding: 10px 0;
     margin-top: 10px;
@@ -44,7 +44,7 @@ body{
 
 .element_wrap {
 	margin-bottom: 10px;
-	padding: 10px 0 10px 10px;
+	padding: 10px 0 10px 100px;
 	border-bottom: 1px solid #ccc;
 	text-align: left;
 }
