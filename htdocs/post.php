@@ -19,7 +19,6 @@
     $reverse =  $_POST['ret'] ;}  #返却チェックをした図書
   
     $today = date('Y-m-d');      #貸出日
-    $day = 0000-00-00;   #貸出・返却予定日リセット
     $num = $_POST['num'];        # 検索されたデータ数
 
   require 'db.php'; # 接続
@@ -39,7 +38,7 @@
     }
     if (!empty($reverse[$i])) {
       $id = $reverse[$i];
-      $sql = "UPDATE books SET lending_day = \"$day\", users_name = \"\", return_day = \"$day\" where id = \"$id\"";
+      $sql = "UPDATE books SET lending_day = \"\", users_name = \"\", return_day = \"\" where id = \"$id\"";
       $prepare = $db->prepare($sql); # 準備
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
    }
