@@ -133,7 +133,7 @@ body{
 
 .element_wrap {
 	margin-bottom: 10px;
-	padding: 10px 0;
+	padding: 10px 0 10px 30px;
 	border-bottom: 1px solid #ccc;
 	text-align: left;
 }
