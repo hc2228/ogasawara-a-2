@@ -12,8 +12,8 @@
   $user = $_POST['name'];      #名前
   $p = $_POST['return'];       #返却予定日     
   $bookid = $_POST['chk'];     #貸出チェックをした図書 
-  $reverse =  $_POST['ret'] ;
-  $today = date('Y-m-d');
+  $reverse =  $_POST['ret'] ;  #返却チェックをした図書
+  $today = date('Y-m-d');      #貸出日
   $num = $_POST['num'];        # 検索されたデータ数
 
   require 'db.php'; # 接続
