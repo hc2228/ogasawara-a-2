@@ -11,20 +11,27 @@
   # 送信されたデータの取得
   $user = $_POST['name'];      #名前
   $p = $_POST['return'];       #返却予定日     
-  
-  if (!empty($_POST['chk'])){
-  $bookid = $_POST['chk'];}     #貸出チェックをした図書 
-  
-  if (!empty($_POST['ret'])){
-    $reverse =  $_POST['ret'] ;}  #返却チェックをした図書
-
-    $today = date('Y-m-d');      #貸出日
-    $num = $_POST['num'];        # 検索されたデータ数
-
-  require 'db.php'; # 接続
+  $bookid = $_POST['chk'];     #貸出チェックをした図書 
+  $reverse =  $_POST['ret'] ;  #返却チェックをした図書
+  $today = date('Y-m-d');      #貸出日
+  $num = $_POST['num'];        # 検索されたデータ数
 
   for ($i=0; $i<$num; $i++){
+    if((!empty($bookid[$i])) && (!empty($reverse[$i]))){ #貸出チェック、返却チェックどちらも場合にエラーに飛ぶ
+      header("Location: ./error-2.php");
+      exit;
+    }
+  }
+  require 'db.php'; # 接続
+
+  #ここにエラー文を書く
+  for ($i=0; $i<$num; $i++) {
     if (!empty($bookid[$i])) {
+
+      if(($user == NULL) || ($p == NULL)){
+        header("Location : ./error-3.php");
+        exit;
+      }
       $id = $bookid[$i];
       #$sql = 'INSERT into books (lending_day, users_name, return_day ) values (:today, :name, :p)';
       $sql = "UPDATE books SET lending_day = \"$today\", users_name = \"$user\", return_day = \"$p\" where id = \"$id\"";
@@ -36,6 +43,7 @@
 
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
     }
+    
     if (!empty($reverse[$i])) {
       $id = $reverse[$i];
       $sql = "UPDATE books SET lending_day = \"\", users_name = \"\", return_day = \"\" where id = \"$id\"";
@@ -46,7 +54,5 @@
    header('Location: ./index.php');
   ?>
 
-
-  
   </body>
 </html>
