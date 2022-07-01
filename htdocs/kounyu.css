@@ -52,7 +52,7 @@ label{
 
 .purchase{
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-left: 10%;
     margin-right: 10%;
     display: flex;/*横並び*/
@@ -65,7 +65,7 @@ label{
     margin:0 auto;
     text-align: center;
     padding: 10px;
-    font-size: 15px;
+    font-size: 20px;
     color: #fff;
     background: #7A903D;
     display: block;
