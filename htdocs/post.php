@@ -8,55 +8,53 @@
   <body>
 
   <?php
+
+  session_start();
+  $_SESSION['keyword'] = $_POST['kw'];
+
   # 送信されたデータの取得
   $user = $_POST['name'];      #名前
   $p = $_POST['return'];       #返却予定日     
-  
-  if (!empty($_POST['chk'])){
-    $bookid = $_POST['chk'];}     #貸出チェックをした図書 
-  
-  if (!empty($_POST['ret'])){
-      $reverse =  $_POST['ret'];}  #返却チェックをした図書
-  
-  $today = date('YYYY-MM-DD');      #貸出日
+  $bookid = $_POST['chk'];     #貸出チェックをした図書 
+  $return =  $_POST['ret'];    #返却チェックをした図書
+  $today = date('Y-m-d');
   $num = $_POST['num'];        # 検索されたデータ数
 
-  for ($i=0; $i<$num; $i++){
-    if((!empty($bookid[$i])) && (!empty($reverse[$i]))){ #貸出チェック、返却チェックどちらも場合にエラーに飛ぶ
-      header("Location: ./error-2.php");
+  # https://flytech.work/blog/7864/
+  # PHPのempty()関数は、変数が空であるかどうかを判定する関数
+  # であり、空の場合はtrueをそれ以外の場合はfalseを返すことか
+  # ら変数の空チェックを行う際によく使われます。
+
+  for ($i=0; $i<$num; $i++) {
+    if ((!empty($bookid[$i])) && (!empty($return[$i]))) {
+      # 両方にチェックされている場合は以後の処理はせずに application.php に戻る
+      header('Location: ./application.php');
+      //header('Location: ./index.php');
       exit;
     }
   }
+
   require 'db.php'; # 接続
-
-  #ここにエラー文を書く
-  for ($i=0; $i<$num; $i++) {
+  
+  for ($i=0; $i<$num; $i++){
+  
     if (!empty($bookid[$i])) {
-
-      if(($user == NULL) || ($p == NULL)){
-        header("Location : ./error-3.php");
-        exit;
-      }
       $id = $bookid[$i];
-      #$sql = 'INSERT into books (lending_day, users_name, return_day ) values (:today, :name, :p)';
       $sql = "UPDATE books SET lending_day = \"$today\", users_name = \"$user\", return_day = \"$p\" where id = \"$id\"";
-      #$sql = 'UPDATE books SET lending_day = :today, users_name = :user, return_day = :p where id = :id';
       $prepare = $db->prepare($sql); # 準備
-      #$prepare->bindValue(':today', $today, PDO::PARAM_STR);         # 埋め込み3
-      #$prepare->bindValue(':user', $user, PDO::PARAM_STR);           # 埋め込み1
-      #$prepare->bindValue(':p', $p, PDO::PARAM_STR);                 # 埋め込み2
-
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
     }
-    
-    if (!empty($reverse[$i])) {
-      $id = $reverse[$i];
-      $sql = "UPDATE books SET lending_day = \"0000-00-00\", users_name = \"\", return_day = \"\" where id = \"$id\"";
+
+    if (!empty($return[$i])) {
+      $id = $return[$i];
+      //$sql = "UPDATE books SET lending_day = \"\", users_name = \"\", return_day = \"\" where id = \"$id\"";
+      $sql = "UPDATE books SET lending_day = NULL, users_name = \"\", return_day = NULL where id = \"$id\"";
       $prepare = $db->prepare($sql); # 準備
       $prepare->execute(); # 実行（本当はエラーチェックが必要）
    }
   }
-   header('Location: ./index.php');
+  header('Location: ./application.php');
+  #header('Location: ./index.php');
   ?>
 
   </body>
